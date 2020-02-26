@@ -7,7 +7,7 @@ nginx \
 postgresql \
 postgresql-contrib \
 python2.7 \
-python-pip 
+python-pip \
 sudo \
 python-virtualenv \
 python-dev \
