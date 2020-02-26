@@ -26,7 +26,7 @@ server {
 server {
     # Redirect HTTPS to www
     listen 443;
-    ssl on;
+    include /etc/nginx/shared-configs/ssl.conf;
     ssl_certificate /etc/nginx/ssl/fakedomain.com.crt; # Wildcard SSL certificate
     ssl_certificate_key /etc/nginx/ssl/fakedomain.com.key; # Wildcard SSL certificate key
 
@@ -39,7 +39,7 @@ server {
 server {
     # API proxy
     listen 443;
-    ssl on;
+    include /etc/nginx/shared-configs/ssl.conf;
     ssl_certificate /etc/nginx/ssl/fakedomain.com.crt; # Wildcard SSL certificate
     ssl_certificate_key /etc/nginx/ssl/fakedomain.com.key; # Wildcard SSL certificate key
 
@@ -80,7 +80,7 @@ server {
    listen 443;
    server_name www.fakedomain.com;
    client_max_body_size 500M;
-   ssl on;
+   include /etc/nginx/shared-configs/ssl.conf;
    ssl_certificate /etc/nginx/ssl/fakedomain.com.crt; # Wildcard SSL certificate
    ssl_certificate_key /etc/nginx/ssl/fakedomain.com.key; # Wildcard SSL certificate key
 
