@@ -7,4 +7,3 @@ su - postgres -c "psql -d template1 -c 'CREATE DATABASE xsshunter;'"
 sleep 20 &&  cp /xsshunter/ssl.crt /etc/nginx/ssl/${domain}.crt ; cp /xsshunter/ssl.key /etc/nginx/ssl/${domain}.key
 nohup sh /xsshunter/gui/guiserver.sh
 nohup sh /xsshunter/api/apiserver.py
-tail -f /dev/null
