@@ -15,8 +15,6 @@ libpq-dev \
 libffi-dev \
 build-essential
 
-RUN mkdir /cert
-
 RUN pip install setuptools
 
 RUN pip install pyyaml
