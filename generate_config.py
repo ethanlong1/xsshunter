@@ -115,7 +115,7 @@ print """
 
 print "What is the base domain name you will be using? "
 print "(ex. localhost, www.example.com)"
-hostname = os.environ['d_hostname']
+hostname = os.environ['d_domain']
 if hostname != "":
 	settings["domain"] = hostname
 nginx_template = nginx_template.replace( "fakedomain.com", settings["domain"] )
@@ -124,9 +124,9 @@ print "Great! Now let's setup your Mailgun account to send XSS alerts to."
 print ""
 print "Enter your API key: "
 print "(ex. key-8da843ff65205a61374b09b81ed0fa35)"
-settings["mailgun_api_key"] = os.environ['d_md_api']
+settings["mailgun_api_key"] = os.environ['d_mail_api']
 
-settings["mailgun_sending_domain"] = os.environ['d_md_api']
+settings["mailgun_sending_domain"] = os.environ['d_mail_domain']
 print ""
 print "What email address is sending the payload fire emails?: "
 print "(ex. no-reply@example.com)"
@@ -134,7 +134,7 @@ settings["email_from"] = os.environ['d_md_email']
 print ""
 print "Where should abuse/contact emails go?: "
 print "(ex. yourpersonal@gmail.com)"
-settings["abuse_email"] = os.environ['d_spam']
+settings["abuse_email"] = os.environ['d_mail_spam']
 print ""
 print ""
 print "What postgres user is this service using? "
@@ -143,7 +143,7 @@ settings["postgreql_username"] = "xsshunter"
 print ""
 print "What is the postgres user's password? "
 print "(ex. @!$%@^%UOFGJOEJG$)"
-settings["postgreql_password"] = os.environ['d_psql_u']
+settings["postgreql_password"] = os.environ['d_psql_p']
 print ""
 print "What is the postgres user's DB? "
 print "(ex. xsshunter)"
