@@ -115,7 +115,7 @@ print """
 
 print "What is the base domain name you will be using? "
 print "(ex. localhost, www.example.com)"
-hostname = so.environ['d_hostname']
+hostname = os.environ['d_hostname']
 if hostname != "":
 	settings["domain"] = hostname
 nginx_template = nginx_template.replace( "fakedomain.com", settings["domain"] )
