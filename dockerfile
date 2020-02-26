@@ -12,19 +12,20 @@ sudo \
 python-virtualenv \
 python-dev \
 libpq-dev \
-libffi-dev
+libffi-dev \
+build-essential
 
 RUN mkdir /cert
-
-RUN pip install setuptools
-
-RUN pip install pyyaml
+RUN mkdir /etc/nginx/shared-configs
 
 RUN git clone https://github.com/ethanlong1/xsshunter.git
 
+RUN pip install setuptools
+RUN pip install --upgrade pip
+RUN pip install pyyaml
 RUN pip install -r /xsshunter/api/requirements.txt
 RUN pip install -r xsshunter/gui/requirements.txt
-RUN mkdir /etc/nginx/shared-configs
+
 RUN cp /xsshunter/shared-configs/ssl.conf /etc/nginx/shared-configs/
 
-CMD ["/usr/bin/bash","/xsshunter/entrypoint.sh"]
+CMD ["/bin/bash","/xsshunter/entrypoint.sh"]
