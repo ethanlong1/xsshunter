@@ -130,7 +130,7 @@ settings["mailgun_sending_domain"] = os.environ['d_mail_domain']
 print ""
 print "What email address is sending the payload fire emails?: "
 print "(ex. no-reply@example.com)"
-settings["email_from"] = os.environ['d_md_email']
+settings["email_from"] = os.environ['d_mail_email']
 print ""
 print "Where should abuse/contact emails go?: "
 print "(ex. yourpersonal@gmail.com)"
