@@ -1,7 +1,7 @@
 #!/bin/bash
 service nginx start
 service postgresql start
-su -i postgres -c "/xsshuner/postgres.sh"
+su - postgres -c "psql -d template1 -c 'CREATE USER xsshunter WITH PASSWORD '\''${password}'\'';'"
 su -i postgres -c "psql -d template1 -c 'CREATE DATABASE xsshunter;'"
 /usr/bin/python2.7 /xsshunter/generate_config.py
 mv /cert/ssl_cert /etc/nginx/ssl/${domain}.crt
