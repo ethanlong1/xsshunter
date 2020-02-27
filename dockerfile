@@ -29,4 +29,4 @@ RUN pip install -r xsshunter/gui/requirements.txt
 RUN mkdir /etc/nginx/shared-configs
 RUN cp /xsshunter/shared-configs/ssl.conf /etc/nginx/shared-configs/
 
-ENTRYPOINT ["/bin/bash","/xsshunter/entrypoint.sh"]
+CMD ["/bin/bash","/xsshunter/entrypoint.sh"]
