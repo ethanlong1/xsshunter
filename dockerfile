@@ -13,7 +13,8 @@ python-virtualenv \
 python-dev \
 libpq-dev \
 libffi-dev \
-build-essential
+build-essential \
+virtualenv
 
 RUN pip install setuptools
 
