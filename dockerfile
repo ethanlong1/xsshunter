@@ -25,8 +25,6 @@ RUN git clone https://github.com/ethanlong1/xsshunter.git
 
 RUN pip install --upgrade pip
 
-RUN pip install -r /xsshunter/api/requirements.txt
-RUN pip install -r xsshunter/gui/requirements.txt
 RUN mkdir /etc/nginx/shared-configs
 RUN cp /xsshunter/shared-configs/ssl.conf /etc/nginx/shared-configs/
 
