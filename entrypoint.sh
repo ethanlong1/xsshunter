@@ -8,5 +8,6 @@ mv /xsshunter/default /etc/nginx/sites-enabled/default
 mkdir /etc/nginx/ssl/
 echo "$crt" | base64 -d > /etc/nginx/ssl/${domain}.crt 
 echo "$key" | base64 -d > /etc/nginx/ssl/${domain}.key
-nohup sh /xsshunter/api/apiserver.sh
+service nginx restart
+sleep 10 && nohup sh /xsshunter/api/apiserver.sh
 sleep 10 && nohup sh /xsshunter/gui/guiserver.sh
